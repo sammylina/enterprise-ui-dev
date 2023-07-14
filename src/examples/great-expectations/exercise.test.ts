@@ -130,7 +130,7 @@ describe('Person', () => {
     },
   );
 
-  it('will add a friend', () => {
+  it('will add a friend and pass test happily', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
@@ -141,7 +141,7 @@ describe('Person', () => {
     // Verify that john.friends contains paul.
   });
 
-  it('will mutually add a friend', () => {
+  it('will mutually add a friend, master push is disabled but there is test errror', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
