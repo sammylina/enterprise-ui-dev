@@ -46,7 +46,7 @@ it('supports removing an item', () => {
   expect(result).toEqual([])
 });
 
-it('supports toggling an item', () => {
+it('supports toggling an item and keep building on CI pipeline', () => {
   const state = [
     {
       id: '1',
