@@ -39,7 +39,7 @@ describe("Reducers", () => {
         })
     })
 
-    it('should update item name', () => {
+    it('should update item name with given ID', () => {
         const [item] = store;
         store = reducer(store, update({id: item.id, name: 'IPhone'}))
         expect(store[0]).toContain({
@@ -63,6 +63,5 @@ describe("Reducers", () => {
         store = reducer(store, add(item2))
         store = reducer(store, add(item3))
 
-        console.log("store: ", store)
     })
 })
