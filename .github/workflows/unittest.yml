@@ -3,14 +3,13 @@ name: Run unit test
 
 on: 
   push: 
-    branches: [main]
+    branches: [main, action]
   pull_request:
     branches: [main]
   
 jobs:
   build-and-test:
     runs-on: unbuntu-latest
-  
 
     steps:
       - uses: actions/checkout@v3

@@ -63,6 +63,5 @@ describe("Reducers", () => {
         store = reducer(store, add(item2))
         store = reducer(store, add(item3))
 
-        console.log("store: ", store)
     })
 })
