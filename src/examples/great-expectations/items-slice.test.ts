@@ -43,7 +43,6 @@ it('supports removing an item', () => {
   ];
 
   const result = reducer(state, remove({ id: '1' }));
-  expect(result.length).toBe(1)
   expect(result).toEqual([])
 });
 
