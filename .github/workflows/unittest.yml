@@ -3,17 +3,15 @@ name: Run unit test
 
 on: 
   push: 
-    branches: [main, action]
-  pull_request:
-    branches: [main]
+    branches: ["main", "action"]
   
 jobs:
   build-and-test:
     runs-on: unbuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
-      - run: npm ci
-      - run: npm run test:all
+    - uses: actions/checkout@v3
+    - name: Setup Node
+      uses: actions/setup-node@v3
+    - run: npm ci
+    - run: npm run test:all

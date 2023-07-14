@@ -28,7 +28,7 @@ it('prefixes ids with "item-"', () => {
   })
 });
 
-it('defaults new items to a packed status of false', () => {
+it('should set false the default value of packed', () => {
   const result = reducer([], add({ name: 'iPhone' }));
   expect(result).toEqual([expect.objectContaining({packed: false, name: 'iPhone'})])
 });
