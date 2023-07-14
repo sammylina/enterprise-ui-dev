@@ -183,7 +183,7 @@ const explode = () => {
   throw new Error('Something went terribly wrong');
 };
 
-describe('explode', () => {
+describe('explode or throw error', () => {
   it('should throw an error', () => {
     expect(() => explode()).toThrow();
   });
