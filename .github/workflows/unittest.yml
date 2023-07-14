@@ -3,7 +3,7 @@ name: Run unit test
 
 on: 
   push: 
-    branches: ["main", "action"]
+    branches: ["main", "actions"]
   
 jobs:
   build-and-test:
