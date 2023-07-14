@@ -130,7 +130,7 @@ describe('Person', () => {
     },
   );
 
-  it('will add a friend', () => {
+  it('will add a friend and pass test happily', () => {
     const john = new Person('John Lennon');
     const paul = new Person('Paul McCartney');
 
