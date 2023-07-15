@@ -4,10 +4,10 @@ on:
   push:
     branches: [actions]
   pull_request:
-    branches: [actions]
+    branches: [main, actions]
 
 jobs:
-  build-and-test:
+  unit-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,9 +15,31 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Node
         uses: actions/setup-node@v3
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{runner.os}}-${{hashFiles('**/package-lock.json')}}
       - run: npm ci
         name: Install modules from npm
-      - run: npm run build
-        name: Build the app
       - run: npm run test:all
         name: Run the tests
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: setup nodejs
+        uses: actions/setup-node@v3
+      - name: Cache node modules
+        id: cache-npm
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{runner.os}}-${{hashFiles('**/package-lock.json')}}
+      - run: npm ci
+        name: Install dependencies
+      - run: npm run build
+        name: Build from source
